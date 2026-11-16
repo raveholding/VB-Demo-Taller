@@ -13,5 +13,8 @@ function sync(){var sd=document.getElementById('side');ov.hidden=!(sd&&sd.classL
 setInterval(sync,500);document.addEventListener('click',function(e){var sd=document.getElementById('side');if(!sd||!sd.classList.contains('open'))return;
 if(e.target.closest('#side')||e.target.closest('[data-act=menu]'))return;sd.classList.remove('open');sync();e.preventDefault();e.stopPropagation();},true);
 document.addEventListener('click',function(){setTimeout(sync,0);});document.addEventListener('keydown',function(e){if(e.key==='Escape'){var sd=document.getElementById('side');if(sd){sd.classList.remove('open');sync();}}});})();</script><!-- /vb-movil -->'''
+# misma regla que las otras demos: sólo se sube arriba al cambiar de pantalla
+if "vbPv" not in h: h=h.replace("function go(v){if(!ME)return;","function go(v){if(!ME)return;var vbPv=VIEW,vbPy=window.scrollY||0;",1)
+h=h.replace("renderView();window.scrollTo(0,0)}\nfunction renderView()","renderView();window.scrollTo(0,vbPv===v?vbPy:0)}\nfunction renderView()",1)
 i=h.rindex('</body>');h=h[:i]+blk+'\n'+h[i:]
 open(p,'w',encoding='utf8').write(h);print('vb-movil aplicado')

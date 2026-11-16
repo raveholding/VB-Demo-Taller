@@ -717,8 +717,8 @@ function renderShell(){
  '<div class="who"><b>'+h(ME.n)+'</b><br><span class="mut">'+h(ROL[ME.rol])+'</span><br><button class="btn s" style="margin-top:6px;background:#2f333a;color:#fff;border-color:#444" data-act="logout">Salir</button>'+(MODO==='real'?' <button class="btn s" style="margin-top:6px;background:#2f333a;color:#fff;border-color:#444" data-act="mipin">Mi clave</button>':'')+'</div>'+
  '<div class="vbs">'+vbLine()+'<br><a href="https://wa.me/'+VBTEL+'?text='+encodeURIComponent(VBMSG)+'" target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:+'+VBTEL+'">Llamar</a> · <a href="mailto:vincularbusiness@gmail.com">Correo</a></div>';
  go(VIEW)}
-function go(v){if(!ME)return;if(!can(v)||(v==='config'&&ME.rol!=='dueno'))v='dash';VIEW=v;$$('#side nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
- $('#side').classList.remove('open');renderView();window.scrollTo(0,0)}
+function go(v){if(!ME)return;var vbPv=VIEW,vbPy=window.scrollY||0;if(!can(v)||(v==='config'&&ME.rol!=='dueno'))v='dash';VIEW=v;$$('#side nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+ $('#side').classList.remove('open');renderView();window.scrollTo(0,vbPv===v?vbPy:0)}
 function renderView(){$('#view').innerHTML=V[VIEW]()+'<div style="margin-top:20px">'+vbBlock()+'</div>';
  const na=DB.ots.filter(o=>o.estado!=='Entregado').length;const b=$('#nav_ot .badge2');if(b)b.textContent=na}
 ACT.go=d=>go(d.v);
@@ -2894,6 +2894,8 @@ if(typeof VB_CLIENTE!=='undefined'&&!VB_CLIENTE){const _rsD=renderShell;renderSh
 
 (function init(){if(/menu/i.test(location.hash)){renderMenu();return}try{const id=sessionStorage.getItem(SS);if(id)ME=userOf(id)||null}catch(e){}if(ME)renderShell();else renderLogin()})();
 </script>
+
+
 <!-- vb-movil --><style>#uxtop .tb{flex-shrink:0;white-space:nowrap}#uxtop .tb.srch{flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
 #vb-ov{display:none}@media(max-width:900px){#vb-ov:not([hidden]){display:block;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.5)}}</style>
 <script>(function(){var ov=document.createElement('div');ov.id='vb-ov';ov.hidden=true;document.body.appendChild(ov);
