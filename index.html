@@ -2894,5 +2894,12 @@ if(typeof VB_CLIENTE!=='undefined'&&!VB_CLIENTE){const _rsD=renderShell;renderSh
 
 (function init(){if(/menu/i.test(location.hash)){renderMenu();return}try{const id=sessionStorage.getItem(SS);if(id)ME=userOf(id)||null}catch(e){}if(ME)renderShell();else renderLogin()})();
 </script>
+<!-- vb-movil --><style>#uxtop .tb{flex-shrink:0;white-space:nowrap}#uxtop .tb.srch{flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+#vb-ov{display:none}@media(max-width:900px){#vb-ov:not([hidden]){display:block;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.5)}}</style>
+<script>(function(){var ov=document.createElement('div');ov.id='vb-ov';ov.hidden=true;document.body.appendChild(ov);
+function sync(){var sd=document.getElementById('side');ov.hidden=!(sd&&sd.classList.contains('open'));}
+setInterval(sync,500);document.addEventListener('click',function(e){var sd=document.getElementById('side');if(!sd||!sd.classList.contains('open'))return;
+if(e.target.closest('#side')||e.target.closest('[data-act=menu]'))return;sd.classList.remove('open');sync();e.preventDefault();e.stopPropagation();},true);
+document.addEventListener('click',function(){setTimeout(sync,0);});document.addEventListener('keydown',function(e){if(e.key==='Escape'){var sd=document.getElementById('side');if(sd){sd.classList.remove('open');sync();}}});})();</script><!-- /vb-movil -->
 </body>
 </html>
