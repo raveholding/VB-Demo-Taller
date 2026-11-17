@@ -192,7 +192,7 @@ function mkCuit(pre,n){for(;;n++){const b=pre+String(n).padStart(8,'0');const dv
 /* ---------- Datos de práctica (modo práctica) ---------- */
 function seed(){
  const d={ver:2,modo:'practica',seq:{ot:0,tu:0,oc:0,mov:0,tc:1,vt:0},ventas:[],
- cfg:{nombre:'Tu Taller Car Center',dir:'Av. Ejemplo 123 - Salta',tel:'3870000000',mail:'contacto@tutaller.example',fb:'tutaller',ig:'tutaller',vhora:18000,rubrosOblig:true,traspasoSinRubro:false,recepCobra:false},
+ cfg:{nombre:'Tu Taller Car Center',dir:'Av. Ejemplo 123 - Salta',tel:'(0387) 400-0123',mail:'contacto@tutaller.example',fb:'tutaller',ig:'tutaller',vhora:18000,rubrosOblig:true,traspasoSinRubro:false,recepCobra:false},
  users:[
   {id:'u1',n:'Martín Gómez',rol:'dueno',esp:'Dueño · gestión',com:0},
   {id:'u2',n:'Marcelo Torres',rol:'jefe',esp:'Jefe de taller · motor y transmisión',com:10},
@@ -2896,6 +2896,17 @@ if(typeof VB_CLIENTE!=='undefined'&&!VB_CLIENTE){const _rsD=renderShell;renderSh
 </script>
 
 
+
+<script id="vb-rst-taller">(function(){if(window.vbDemoReset)return;
+window.vbDemoReset=function(){var go=function(){try{var ks=[];for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&(k.indexOf('tmvb_')===0||k.indexOf('vb.')===0))ks.push(k);}ks.forEach(function(k){localStorage.removeItem(k);});}catch(e){}try{sessionStorage.clear();}catch(e){}
+ var fin=function(){location.replace(location.pathname);setTimeout(function(){location.reload();},50);};try{var r=indexedDB.deleteDatabase('vb_copias');r.onsuccess=r.onerror=r.onblocked=fin;}catch(e){fin();}setTimeout(fin,1500);};
+ var msg='Se borra todo lo que se cargó en esta demo en este navegador y vuelven los datos de ejemplo, fechados hoy. Las otras demos no se tocan.';
+ if(typeof confirmBox==='function')confirmBox(msg,go,'Reiniciar');else if(confirm('Reiniciar la demo\n\n'+msg))go();};
+var css='.vb-rst{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.85rem;padding:.55rem .9rem;border-radius:10px;border:1px dashed currentColor;background:transparent;color:inherit;opacity:.85;cursor:pointer}.vb-rst:hover{opacity:1}#side .vb-rst{margin:1rem .8rem 1.4rem;width:calc(100% - 1.6rem);justify-content:center}.vb-rst-login{display:flex;justify-content:center;margin:1.2rem 0 .4rem}';
+var poner=function(){if(!document.getElementById('vb-rst-css')){var st=document.createElement('style');st.id='vb-rst-css';st.textContent=css;document.head.appendChild(st);}
+ var side=document.getElementById('side');if(side&&!side.querySelector('.vb-rst')){var b=document.createElement('button');b.type='button';b.className='vb-rst';b.textContent='↺ Reiniciar demo';b.onclick=function(){window.vbDemoReset();};side.appendChild(b);}
+ var lg=document.getElementById('login');if(lg&&!lg.hidden&&!lg.querySelector('.vb-rst-login')){var w=document.createElement('div');w.className='vb-rst-login';w.innerHTML='<button type="button" class="vb-rst">↺ Reiniciar demo (dejarla como nueva)</button>';w.firstChild.onclick=function(){window.vbDemoReset();};lg.appendChild(w);}};
+new MutationObserver(poner).observe(document.body,{childList:true,subtree:true});poner();})();</script>
 <!-- vb-movil --><style>#uxtop .tb{flex-shrink:0;white-space:nowrap}#uxtop .tb.srch{flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
 #vb-ov{display:none}@media(max-width:900px){#vb-ov:not([hidden]){display:block;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.5)}}</style>
 <script>(function(){var ov=document.createElement('div');ov.id='vb-ov';ov.hidden=true;document.body.appendChild(ov);
