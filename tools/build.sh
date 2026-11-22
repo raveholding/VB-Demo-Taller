@@ -7,4 +7,5 @@ python3 "$D/mk_demo.py" "$1" index.html
 python3 "$D/demo_patch.py" index.html
 python3 "$D/vb_movil.py" index.html
 python3 "$D/vb_crud.py" index.html
+python3 "$D/vb_agenda.py" index.html
 python3 "$D/pwa.py" . "Tu Taller Car Center · Sistema VB" "Car Center" "$D/logo_demo.svg"
