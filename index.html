@@ -194,7 +194,7 @@ function seed(){
  const d={ver:2,modo:'practica',seq:{ot:0,tu:0,oc:0,mov:0,tc:1,vt:0},ventas:[],
  cfg:{nombre:'Tu Taller Car Center',dir:'Av. Ejemplo 123 - Salta',tel:'(0387) 400-0123',mail:'contacto@tutaller.example',fb:'tutaller',ig:'tutaller',vhora:18000,rubrosOblig:true,traspasoSinRubro:false,recepCobra:false},
  users:[
-  {id:'u1',n:'Martín Gómez',rol:'dueno',esp:'Dueño · gestión',com:0},
+  {id:'u1',n:'Martín Gómez',rol:'dueno',esp:'Gestión y administración',com:0},
   {id:'u2',n:'Marcelo Torres',rol:'jefe',esp:'Jefe de taller · motor y transmisión',com:10},
   {id:'u3',n:'Lucía Ramos',rol:'recepcion',esp:'Recepción y atención al cliente',com:0},
   {id:'u4',n:'Darío Quispe',rol:'mecanico',esp:'Electricidad y electrónica',com:8},
@@ -341,7 +341,7 @@ function seed(){
 /* ---------- Datos reales: arranca vacío, sólo con el catálogo base ---------- */
 function seedReal(){const p=seed();
  return {ver:2,modo:'real',seq:{ot:0,tu:0,oc:0,mov:0,tc:1,vt:0},ventas:[],cfg:Object.assign({},p.cfg,{lastBackup:0,setupOk:false}),
- users:[{id:'u1',n:'',rol:'dueno',esp:'Dueño · gestión',com:0}],
+ users:[{id:'u1',n:'',rol:'dueno',esp:'Gestión y administración',com:0}],
  rubrosRep:p.rubrosRep,marcas:p.marcas,rubrosFin:p.rubrosFin,
  servicios:p.servicios.map(s=>Object.assign({},s,{pu:0})),
  provs:[],repuestos:[],clientes:[],vehs:[],ots:[],turnos:[],ocs:[],ledger:[],cajas:p.cajas,
