@@ -9,3 +9,4 @@ python3 "$D/vb_movil.py" index.html
 python3 "$D/vb_crud.py" index.html
 python3 "$D/vb_agenda.py" index.html
 python3 "$D/pwa.py" . "Tu Taller Car Center · Sistema VB" "Car Center" "$D/logo_demo.svg"
+python3 "$D/vb_guia.py" taller index.html
